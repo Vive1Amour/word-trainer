@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 本地运行日志（勿上传）
+*.log
+
+# 本地临时文件
+/tmp/
