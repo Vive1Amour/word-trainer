@@ -1,0 +1,432 @@
+{
+  "format": "word-trainer-open-books",
+  "version": 1,
+  "collectedOn": "2026-10-12",
+  "books": [
+    {
+      "id": "open_sat",
+      "name": "SAT 词汇",
+      "lang": "en",
+      "count": 4463,
+      "rawCount": 4464,
+      "category": "exam",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/SAT_3_T.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/SAT_3_T.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 1
+      },
+      "input": "qwerty/public/dicts/SAT_3_T.json",
+      "inputSHA256": "801f17a1b63a0377dc331214e5af2900279c93b6baa8a828d6e639ae5db48310"
+    },
+    {
+      "id": "open_gmat",
+      "name": "GMAT 词汇",
+      "lang": "en",
+      "count": 3047,
+      "rawCount": 3047,
+      "category": "exam",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/GMAT_3_T.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/GMAT_3_T.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "qwerty/public/dicts/GMAT_3_T.json",
+      "inputSHA256": "ed8ce2700e4af00421f7f8a663e4eb754da000bb19ac0d922cb2d02bc1a22f94"
+    },
+    {
+      "id": "open_tem4",
+      "name": "英语专业四级 TEM4",
+      "lang": "en",
+      "count": 4025,
+      "rawCount": 4025,
+      "category": "exam",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/Level4luan_2_T.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/Level4luan_2_T.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "qwerty/public/dicts/Level4luan_2_T.json",
+      "inputSHA256": "3c48b2ece3603b63daca4e887e615fb0a732266a568fe4be8ef2d1f497a4a722"
+    },
+    {
+      "id": "open_tem8",
+      "name": "英语专业八级 TEM8",
+      "lang": "en",
+      "count": 12197,
+      "rawCount": 12197,
+      "category": "exam",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/Level8luan_2_T.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/Level8luan_2_T.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "qwerty/public/dicts/Level8luan_2_T.json",
+      "inputSHA256": "1203dc5777cea51998f6de22cf2f7565c9a87185e7f1593065e708de14fb647d"
+    },
+    {
+      "id": "open_toeic",
+      "name": "托业 TOEIC 词汇",
+      "lang": "en",
+      "count": 1650,
+      "rawCount": 1694,
+      "category": "exam",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/TOEIC.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/TOEIC.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。",
+        "supplementalSource": {
+          "name": "ECDICT",
+          "repository": "https://github.com/skywind3000/ECDICT",
+          "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+          "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+          "path": "ecdict.csv",
+          "license": "MIT",
+          "licenseURL": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+          "licenseScope": "repository",
+          "notes": "用于补全上游空释义"
+        }
+      },
+      "audit": {
+        "rejected": 44,
+        "mergedDuplicates": 0,
+        "ecdictFilledMeanings": 3
+      },
+      "input": "qwerty/public/dicts/TOEIC.json",
+      "inputSHA256": "f9fd538bcc8ec7a9f4fd9c178514e19edd2deb04910a77a111e48d497118e8a9"
+    },
+    {
+      "id": "open_ai_science",
+      "name": "AI for Science 科研词汇",
+      "lang": "en",
+      "count": 491,
+      "rawCount": 491,
+      "category": "professional",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/ai_for_science.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/ai_for_science.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "qwerty/public/dicts/ai_for_science.json",
+      "inputSHA256": "5aa22addafee5f5a3cbb57ea9e16d4051c89b72878de84efe28f87a321cbd264"
+    },
+    {
+      "id": "open_ml",
+      "name": "机器学习英语",
+      "lang": "en",
+      "count": 725,
+      "rawCount": 726,
+      "category": "professional",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/ai_machine_learning.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/ai_machine_learning.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 1
+      },
+      "input": "qwerty/public/dicts/ai_machine_learning.json",
+      "inputSHA256": "c0b93627b3a9170c3547bd6d7997a0bc49f1daa697273147b78c08e33fa0370b"
+    },
+    {
+      "id": "open_biomedical",
+      "name": "生物医学专业英语",
+      "lang": "en",
+      "count": 536,
+      "rawCount": 560,
+      "category": "professional",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/BIOmedical.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/BIOmedical.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 24
+      },
+      "input": "qwerty/public/dicts/BIOmedical.json",
+      "inputSHA256": "aae7393324b95ca537ec3d832d13b6e5ed021da2211003854dd7bb90e88a6eff"
+    },
+    {
+      "id": "open_coder",
+      "name": "计算机与程序员英语",
+      "lang": "en",
+      "count": 1700,
+      "rawCount": 1700,
+      "category": "professional",
+      "meaningLang": "zh",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/it-words.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/it-words.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "qwerty/public/dicts/it-words.json",
+      "inputSHA256": "af5bdd2b2ccb490dac6b255982f19eb3c20c02625350b5c6cf4656c1e1910184"
+    },
+    {
+      "id": "open_de_en",
+      "name": "德语通用词汇 · 英文释义",
+      "lang": "de",
+      "count": 5829,
+      "rawCount": 5892,
+      "category": "dictionary",
+      "meaningLang": "en",
+      "source": {
+        "name": "Qwerty Learner",
+        "repository": "https://github.com/RealKai42/qwerty-learner",
+        "url": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/public/dicts/german2en.json",
+        "revision": "1182426f2bd0a28c95302c33f9e19136b1262a70",
+        "path": "public/dicts/german2en.json",
+        "license": "GPL-3.0",
+        "licenseURL": "https://github.com/RealKai42/qwerty-learner/blob/1182426f2bd0a28c95302c33f9e19136b1262a70/LICENSE",
+        "licenseScope": "repository",
+        "notes": "上游仓库声明 GPL-3.0；词表及释义的更早来源未逐条独立核验。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 63
+      },
+      "input": "qwerty/public/dicts/german2en.json",
+      "inputSHA256": "c69d6b77a7eb4e3e4f799c9a070bd78fc8cb5f183b46c15cd8676e88d1d55227"
+    },
+    {
+      "id": "open_bnc_1000",
+      "name": "BNC 高频 · 基础",
+      "lang": "en",
+      "count": 989,
+      "rawCount": 989,
+      "category": "foundation",
+      "meaningLang": "zh",
+      "source": {
+        "name": "ECDICT",
+        "repository": "https://github.com/skywind3000/ECDICT",
+        "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+        "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+        "path": "ecdict.csv",
+        "license": "MIT",
+        "licenseURL": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+        "licenseScope": "repository",
+        "notes": ""
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "ecdict/ecdict.selected.csv",
+      "inputSHA256": "32d4edc6040c2624fc31ffd320e171cecd40b49ab212d72b36916fd79559985e"
+    },
+    {
+      "id": "open_bnc_3000",
+      "name": "BNC 高频 · 进阶",
+      "lang": "en",
+      "count": 1961,
+      "rawCount": 1961,
+      "category": "foundation",
+      "meaningLang": "zh",
+      "source": {
+        "name": "ECDICT",
+        "repository": "https://github.com/skywind3000/ECDICT",
+        "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+        "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+        "path": "ecdict.csv",
+        "license": "MIT",
+        "licenseURL": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+        "licenseScope": "repository",
+        "notes": ""
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "ecdict/ecdict.selected.csv",
+      "inputSHA256": "32d4edc6040c2624fc31ffd320e171cecd40b49ab212d72b36916fd79559985e"
+    },
+    {
+      "id": "open_bnc_5000",
+      "name": "BNC 高频 · 扩展",
+      "lang": "en",
+      "count": 1967,
+      "rawCount": 1967,
+      "category": "foundation",
+      "meaningLang": "zh",
+      "source": {
+        "name": "ECDICT",
+        "repository": "https://github.com/skywind3000/ECDICT",
+        "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+        "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+        "path": "ecdict.csv",
+        "license": "MIT",
+        "licenseURL": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+        "licenseScope": "repository",
+        "notes": ""
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0
+      },
+      "input": "ecdict/ecdict.selected.csv",
+      "inputSHA256": "32d4edc6040c2624fc31ffd320e171cecd40b49ab212d72b36916fd79559985e"
+    },
+    {
+      "id": "open_primary",
+      "name": "小学基础英语 · 社区词表",
+      "lang": "en",
+      "count": 1021,
+      "rawCount": 1021,
+      "category": "foundation",
+      "meaningLang": "zh",
+      "source": {
+        "name": "endict",
+        "repository": "https://github.com/ismartcoding/endict",
+        "url": "https://github.com/ismartcoding/endict/blob/522c17036976c34c994a1d367bd61a7d9fa495d9/vocabulary/xiaoxue.json",
+        "revision": "522c17036976c34c994a1d367bd61a7d9fa495d9",
+        "path": "vocabulary/xiaoxue.json",
+        "license": "MIT",
+        "licenseURL": "https://github.com/ismartcoding/endict/blob/522c17036976c34c994a1d367bd61a7d9fa495d9/LICENSE",
+        "licenseScope": "repository",
+        "notes": "词表来自 endict，释义和音标匹配 ECDICT；未匹配的条目不猜测翻译。",
+        "supplementalSource": {
+          "name": "ECDICT",
+          "repository": "https://github.com/skywind3000/ECDICT",
+          "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+          "revision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+          "path": "ecdict.csv",
+          "license": "MIT",
+          "licenseURL": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+          "licenseScope": "repository",
+          "notes": ""
+        }
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 0,
+        "unmatched": [
+          "at the weekend",
+          "collect stamps",
+          "get it right",
+          "have a swim",
+          "on one's way to"
+        ],
+        "originalListCount": 1026
+      },
+      "input": "endict/vocabulary/xiaoxue.json",
+      "inputSHA256": "edb158a986686af9ef44b27744dbffe0383921363f5b8345f8d474b7f2addab7"
+    },
+    {
+      "id": "open_es_en",
+      "name": "西班牙语通用词汇 · 英文释义",
+      "lang": "es",
+      "count": 4497,
+      "rawCount": 4502,
+      "category": "dictionary",
+      "meaningLang": "en",
+      "source": {
+        "name": "FreeDict",
+        "repository": "https://github.com/freedict/fd-dictionaries",
+        "url": "https://github.com/freedict/fd-dictionaries/blob/5bdceeac8d0dba3298c1bebe734f60d54dad30f7/spa-eng/spa-eng.tei",
+        "revision": "5bdceeac8d0dba3298c1bebe734f60d54dad30f7",
+        "path": "spa-eng/spa-eng.tei",
+        "license": "GPL-2.0-or-later",
+        "licenseURL": "https://github.com/freedict/fd-dictionaries/blob/5bdceeac8d0dba3298c1bebe734f60d54dad30f7/spa-eng/COPYING",
+        "licenseScope": "dictionary",
+        "notes": "许可见词典 TEI 文件头；原始词典由 Ergane 转换而来。"
+      },
+      "audit": {
+        "rejected": 0,
+        "mergedDuplicates": 5
+      },
+      "input": "freedict/spa-eng/spa-eng.tei",
+      "inputSHA256": "d1a48cd5b1fb5111d36243a9ee4a226d2e29b70f0f8a8262b9f334b2b8f6c47c"
+    }
+  ],
+  "totalEntries": 45098,
+  "uniqueLanguageWords": 27487,
+  "fullECDICTSHA256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "generatedSHA256": "ccab6ab647aac2516126db053e200e476a0b651ac33655ddb1c04c1add8170d8"
+}

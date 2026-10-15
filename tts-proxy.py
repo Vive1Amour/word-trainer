@@ -14,21 +14,26 @@ Word Trainer 本地 TTS 代理
 
 发音引擎：
   - Piper 离线神经网络语音（模型在 piper/，运行时在 piper_lib/）
+  - 重复单词使用限量内存缓存，不写音频到磁盘
 
 说明：
   - 需要本机已安装 Python 3.10+（macOS 可 brew install python@3.12，Windows 官网安装）
   - 不运行本脚本时，页面只能使用系统朗读。
   - 本文件夹可整体拷到任意电脑（Windows / macOS / Linux）直接运行。
 """
+import argparse
 import http.server
 import io
-import re
+import json
+import os
+import threading
+from functools import lru_cache
 import sys
 import urllib.parse
 import wave
 from pathlib import Path
 
-PORT = 8765
+PORT = int(os.environ.get("WORD_TRAINER_PORT", "8765"))
 MIN_AUDIO_BYTES = 100
 BASE = Path(__file__).resolve().parent
 
@@ -36,6 +41,8 @@ LANGS = {"en": "en", "de": "de", "es": "es"}
 
 PIPER_AVAILABLE = False
 _piper_voices = {}
+_piper_lock = threading.Lock()
+MAX_TEXT_LENGTH = 300
 try:
     _PIPER_LIB = BASE / "piper_lib"
     if _PIPER_LIB.exists():
@@ -51,11 +58,17 @@ try:
         print("[engine] Piper 离线引擎已启用（完全离线 · 神经网络语音）")
     else:
         print("[engine] Piper 模型缺失：请确认 piper/ 目录完整")
-except ImportError:
+except (ImportError, OSError) as exc:
     print("[engine] piper_lib 未就绪（可 pip3 install --target piper_lib piper-tts onnxruntime）")
 
 
+@lru_cache(maxsize=128)
 def piper_synthesize(lang, word):
+    # A Piper session is shared between HTTP threads: serialize model access.
+    with _piper_lock:
+        return _piper_synthesize_locked(lang, word)
+
+def _piper_synthesize_locked(lang, word):
     if not PIPER_AVAILABLE or lang not in PIPER_MODELS:
         raise RuntimeError("Piper 不可用")
     if lang not in _piper_voices:
@@ -74,11 +87,6 @@ def piper_synthesize(lang, word):
     return data
 
 
-def safe_filename(word):
-    s = re.sub(r'[\\/:*?"<>|\s]+', "_", word).strip("._")
-    return (s[:80] or "word")
-
-
 def synthesize_audio(lang, word, voice_opt=None):
     """生成单词音频，返回 (bytes, engine)。Piper 离线合成。"""
     if not PIPER_AVAILABLE:
@@ -94,7 +102,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.send_response(code)
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "*")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
@@ -106,13 +115,27 @@ class Handler(http.server.BaseHTTPRequestHandler):
         except (BrokenPipeError, ConnectionResetError):
             pass
 
+    def _trusted_request(self):
+        # file:// clients send Origin: null; ordinary foreign web pages are rejected.
+        host = self.headers.get("Host", "")
+        allowed_hosts = {f"127.0.0.1:{PORT}", f"localhost:{PORT}"}
+        origin = self.headers.get("Origin")
+        return host in allowed_hosts and origin in (None, "null", *["http://" + h for h in allowed_hosts])
+
     def do_OPTIONS(self):
-        self._send(200, b"", "text/plain")
+        self._send(204 if self._trusted_request() else 403, b"", "text/plain")
 
     def do_GET(self):
+        if not self._trusted_request():
+            self._send(403, b"untrusted origin or host", "text/plain")
+            return
         parsed = urllib.parse.urlparse(self.path)
         if parsed.path == "/health":
-            self._send(200, b"ok", "text/plain")
+            self._send(200, json.dumps({"status": "ok", "engine": "piper", "engineAvailable": PIPER_AVAILABLE}).encode(), "application/json")
+            return
+
+        if parsed.path != "/tts":
+            self._send(404, b"not found", "text/plain")
             return
 
         # 接口：/tts?lang=en|de|es&word=<单词>
@@ -120,13 +143,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
         qs = urllib.parse.parse_qs(parsed.query)
         if parsed.path == "/tts":
             lang = (qs.get("lang", ["en"])[0]).lower()
-            word = qs.get("word", [""])[0]
+            word = qs.get("word", [""])[0].strip()
             voice_opt = qs.get("voice", [""])[0] or None
-        if not word or lang not in LANGS:
+        if not word or lang not in LANGS or len(word) > MAX_TEXT_LENGTH:
             self._send(400, b"bad params", "text/plain")
             return
 
-        # 纯实时：直接合成返回，不读缓存、不写缓存
+        # Repeated words use a bounded RAM cache; no audio is written to disk.
         try:
             data, engine = synthesize_audio(lang, word, voice_opt)
             if len(data) < MIN_AUDIO_BYTES:
@@ -143,15 +166,28 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Word Trainer 本地发音服务")
+    parser.add_argument("--open", action="store_true", help="服务启动后打开单词训练器")
+    args = parser.parse_args()
     print("=" * 56)
     print(" Word Trainer 本地 TTS 代理已启动")
     print(f" 地址: http://127.0.0.1:{PORT}")
-    print(" 现在双击打开 index.html，点「缓存全部发音」即可稳定缓存。")
+    print(" 双击打开 index.html，点击单词即可发音。重复单词使用内存缓存。")
 
     print(" 停止代理: Ctrl + C")
     print("=" * 56)
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    try:
+        server = http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    except OSError as exc:
+        print(f"无法启动发音服务（端口 {PORT}）：{exc}")
+        sys.exit(1)
+    server.daemon_threads = True
+    if args.open:
+        import webbrowser
+        webbrowser.open((BASE / "index.html").as_uri())
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         print("\n已停止代理")
+    finally:
+        server.server_close()

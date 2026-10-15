@@ -1,0 +1,18 @@
+{
+  "qwerty": [
+    "RealKai42/qwerty-learner",
+    "1182426f2bd0a28c95302c33f9e19136b1262a70"
+  ],
+  "endict": [
+    "ismartcoding/endict",
+    "522c17036976c34c994a1d367bd61a7d9fa495d9"
+  ],
+  "freedict": [
+    "freedict/fd-dictionaries",
+    "5bdceeac8d0dba3298c1bebe734f60d54dad30f7"
+  ],
+  "ecdict": [
+    "skywind3000/ECDICT",
+    "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b"
+  ]
+}

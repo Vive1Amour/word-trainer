@@ -11,3 +11,6 @@ __pycache__/
 
 # 本地临时文件
 /tmp/
+
+# Local source snapshots
+.backups/

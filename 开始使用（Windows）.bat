@@ -1,14 +1,24 @@
 @echo off
-REM Word Trainer 一键开始（Windows 双击）：启动发音引擎 + 打开网页
-cd /d %~dp0
-echo ==============================================
-echo  正在启动 Word Trainer 本地发音引擎...
-echo ==============================================
-start /b "" python tts-proxy.py
-timeout /t 2 > nul
-start "" index.html
-echo.
-echo  ✅ 已打开 Word Trainer（发音引擎运行中）
-echo  ⚠️ 请保持本窗口打开；学习完关闭本窗口即停止引擎。
-echo ==============================================
-pause
+chcp 65001 > nul
+cd /d "%~dp0"
+where python >nul 2>nul
+if errorlevel 1 (
+  echo 未找到 Python。请安装 Python 3.10+ 并勾选 Add to PATH。
+  echo 将打开网页，仍可使用系统朗读。
+  start "" index.html
+  pause
+  exit /b 1
+)
+powershell -NoProfile -Command "try { $s = Invoke-RestMethod -Uri 'http://127.0.0.1:8765/health' -TimeoutSec 1; if ($s.engine -eq 'piper') { exit 0 }; exit 1 } catch { exit 1 }" >nul 2>nul
+if not errorlevel 1 (
+  echo 检测到已有 Word Trainer 发音服务，将直接使用。
+  start "" index.html
+  exit /b 0
+)
+echo 正在启动 Word Trainer。请保留此窗口，Ctrl+C 可停止发音服务。
+python tts-proxy.py --open
+if errorlevel 1 (
+  echo 发音服务未能启动。请查看上方错误；网页仍可使用系统朗读。
+  start "" index.html
+  pause
+)
